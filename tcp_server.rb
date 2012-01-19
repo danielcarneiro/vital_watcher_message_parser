@@ -15,19 +15,23 @@ class MyServer
 			Thread.start(@server.accept) do |tcpSocket|
 				ip = connect_info(tcpSocket)
 				begin
-					loop do
-						recv = tcpSocket.recv(10)
-						unless recv.empty?
-							puts recv
-							@logger.info(recv)
-						end
-					end
+					receive_data(tcpSocket)
 				rescue SystemCallError
 					disconnect_info(ip)
 					exit if @interrupted
 				ensure
 					s.close
 				end 
+			end
+		end
+	end
+
+	def receive_data(tcpSocket)
+		loop do
+			recv = tcpSocket.recv(10)
+			unless recv.empty?
+				puts recv
+				@logger.info(recv)
 			end
 		end
 	end
@@ -57,7 +61,7 @@ class MyServer
 
 	def disconnect
 		@server.close
-		@logs "server closed"
+		@logger.info("server closed")
 	end
 end
 

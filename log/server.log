@@ -1,0 +1,7 @@
+# Logfile created on 2012-01-19 11:18:32 +0000 by logger.rb/25413
+I, [2012-01-19T11:18:36.448387 #3041]  INFO -- : connection open with 192.168.9.61
+I, [2012-01-19T11:18:38.098717 #3041]  INFO -- : teste
+
+I, [2012-01-19T11:18:39.762338 #3041]  INFO -- : connection closed with 192.168.9.61
+I, [2012-01-19T11:19:11.520968 #3044]  INFO -- : connection open with 192.168.9.61
+I, [2012-01-19T11:19:18.896369 #3044]  INFO -- : server closed
